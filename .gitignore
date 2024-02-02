@@ -1,0 +1,13 @@
+.idea
+__pycache__
+.DS_Store
+.vscode
+*.so
+logs/
+.ipynb_checkpoints
+logs/*
+doc/*
+*pyc
+data/*
+paper
+# baseline/
