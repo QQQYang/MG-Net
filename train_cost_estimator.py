@@ -14,7 +14,7 @@ from arguments import args
 from utils.logger import setup_logger
 from utils.config import configs
 
-logger = setup_logger(args.log_dir, name='loss-predictor')
+logger = setup_logger(args.log_dir, name='Cost-Estimator')
 
 def train(model, loader, args, board):
     model.train()
@@ -82,9 +82,6 @@ if __name__ == '__main__':
         if 'event' in name:
             os.remove(os.path.join(args.log_dir, name))
     board = SummaryWriter(log_dir=args.log_dir)
-
-    if args.retrain:
-        model.load_state_dict(torch.load(os.path.join(args.log_dir, f'model_e{1000}.pth')))
 
     train_datatset = CostEstimatorDataset(configs.dataset, phase='train')
     logger.info(f'#samples={len(train_datatset)}')

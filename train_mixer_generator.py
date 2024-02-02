@@ -15,7 +15,7 @@ from arguments import args
 from utils.logger import setup_logger
 from utils.config import configs
 
-logger = setup_logger(args.log_dir, name='mixer-predictor-'+args.path_data.split('.')[0].split('_')[-1])
+logger = setup_logger(args.log_dir, name='Mixer-Generator')
 
 def train_qaoa(model, args):
     opt_b = qml.AdamOptimizer(args.lr_qaoa)

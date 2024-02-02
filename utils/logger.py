@@ -31,7 +31,7 @@ class _ColorfulFormatter(logging.Formatter):
 
 @functools.lru_cache()  # so that calling setup_logger multiple times won't add many handlers
 def setup_logger(
-        output=None, distributed_rank=0, *, color=True, name="EQAS", abbrev_name=None
+        output=None, distributed_rank=0, *, color=True, name="", abbrev_name=None
 ):
     """
     Args:
@@ -94,12 +94,6 @@ def setup_logger(
 def _cached_log_stream(filename):
     return PathManager.open(filename, "a")
 
-
-"""
-Below are some other convenient logging methods.
-They are mainly adopted from
-https://github.com/abseil/abseil-py/blob/master/absl/logging/__init__.py
-"""
 
 
 def _find_caller():
@@ -187,23 +181,3 @@ def log_every_n_seconds(lvl, msg, n=1, *, name=None):
     if last_logged is None or current_time - last_logged >= n:
         logging.getLogger(name or caller_module).log(lvl, msg)
         _LOG_TIMER[key] = current_time
-
-# def create_small_table(small_dict):
-#     """
-#     Create a small table using the keys of small_dict as headers. This is only
-#     suitable for small dictionaries.
-#     Args:
-#         small_dict (dict): a result dictionary of only a few items.
-#     Returns:
-#         str: the table as a string.
-#     """
-#     keys, values = tuple(zip(*small_dict.items()))
-#     table = tabulate(
-#         [values],
-#         headers=keys,
-#         tablefmt="pipe",
-#         floatfmt=".3f",
-#         stralign="center",
-#         numalign="center",
-#     )
-#     return table

@@ -1,9 +1,9 @@
 #encoding=utf-8
 
 import argparse
-parser = argparse.ArgumentParser("MG-QAOA")
+parser = argparse.ArgumentParser("MG-Net")
 
-parser.add_argument('--config', type=str, default='exp/gnn/tfim_n16_l2-10.yaml')
+parser.add_argument('--config', type=str, default='')
 
 # dataset
 parser.add_argument('--seed', type=int, default=0, help='random seed')
@@ -19,9 +19,9 @@ parser.add_argument('--graph_id_s', type=int, default=0, help='start index of gr
 parser.add_argument('--graph_id_e', type=int, default=100, help='start index of graph')
 parser.add_argument('--n_layer', type=int, default=2, help='number of circuit layers')
 parser.add_argument('--n_layer_max', type=int, default=30, help='maximum number of circuit layers')
-parser.add_argument('--path_data', type=str, default='data/graph_n16_d3_s2.json', help='directory for saving samples') # train_n6_d3_l2-26_a0_g5_t0.json
-parser.add_argument('--graph_data', type=str, default='data/graph_n64_d3_s1.json', help='directory for saving graphs')
-parser.add_argument('--gt_data', type=str, default='data/graph_n6_d3_s2_gt.json', help='directory for saving samples')
+parser.add_argument('--path_data', type=str, default='', help='directory for saving samples')
+parser.add_argument('--graph_data', type=str, default='', help='directory for saving graphs')
+parser.add_argument('--gt_data', type=str, default='', help='directory for saving samples')
 parser.add_argument('--lr_qaoa', type=float, default=0.1, help='learning rate') # 1.0, 0.15
 parser.add_argument('--model', choices=['cls', 'reg'], default='reg', help='classification model or regression model')
 parser.add_argument('--n_class', type=int, default=1, help='classification model or regression model')
