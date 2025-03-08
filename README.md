@@ -9,7 +9,7 @@
 > - Authors: [Yang Qian](https://qqqyang.github.io/),
 > Xinbiao Wang,
 > [Yuxuan Du](https://yuxuan-du.github.io/), Yong Luo, Dacheng Tao
-> - [arXiv](https://arxiv.org/abs/2409.18692)
+> - [NeurIPS 2024](https://openreview.net/forum?id=5Hdg5IK18B)
 
 
 ## Abstract
@@ -20,11 +20,10 @@ Quantum Approximate Optimization Algorithm (QAOA) and its variants exhibit immen
 If this work is helpful for your research, please consider citing the following entry.
 
 ```
-@inproceedings{qian2024mgnet,
+@inproceedings{qianmg,
   title={MG-Net: Learn to Customize QAOA with Circuit Depth Awareness},
   author={Qian, Yang and Wang, Xinbiao and Du, Yuxuan and Luo, Yong and Tao, Dacheng},
-  booktitle={Advances in Neural Information Processing Systems},
-  year={2024}
+  booktitle={The Thirty-eighth Annual Conference on Neural Information Processing Systems}
 }
 ```
 
